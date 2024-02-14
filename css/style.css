@@ -1,0 +1,184 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.debug{
+  background-color: rgba(255,0,0,.2);
+  margin: 1px solid black;
+
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+.wrapper{
+  width:80%;
+  max-width: 1350px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:0 auto;
+}
+.img-a, .img-b{
+  max-width: 335px;
+  max-height: 485px;
+  position: absolute;
+
+}
+.d-flex{
+display: flex;
+}
+/* HEADER */
+header{
+  height:50px;
+  background-color: #FF6900;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color:white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px grey;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+#logo{
+  width: 100px;
+  height:24px;
+  margin-right: 100px;
+}
+.top-link{
+  text-decoration: none;
+  color: white;
+}
+.top-link:hover{
+  text-decoration: underline;
+}
+
+
+/* MAIN  */
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 100px;
+
+}
+.container{
+  width: 335px;
+  height: 480px;
+  margin:7px;
+  position:relative;
+
+}
+.img-a{
+  z-index: 1;
+}
+
+.sustain, .sale{
+  z-index: 1;
+  padding:7px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  position: relative;
+  top: 425px;
+}
+.sustain{
+  background-color: green;
+
+
+}
+.sale{
+  background-color: red;
+
+}
+.hearts{
+  position:absolute;
+  top: 7px;
+  right: 0px;
+  z-index:1;
+  background-color: white;
+  padding: 2px 10px;
+  font-size: 30px;
+}
+.caption{
+  margin-bottom: 10px;
+  padding-left: 7px;
+}
+.caption > h5{
+  font-weight: 400;
+}
+.price {
+color: red;
+font-weight: bold;
+}
+.full-price{
+  text-decoration: line-through;
+}
+
+
+/* FLIP */
+.flip-box {
+  perspective: 1000px; /*Senso di profondità */
+}
+
+.flip-box-inner {
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /*fondamentale fa attivare il retro*/
+}
+
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /*Safari*/
+  backface-visibility: hidden;
+}
+
+/* HORIZONTAL */
+.flip-box.horizontal:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+.flip-box-back {
+  transform: rotateY(180deg);
+}
+
+/* VERTICAL */
+.flip-box.vertical:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-back.vertical {
+  transform: rotateX(180deg);
+}
+/* DIAGONAL */
+.flip-box.diagonal:hover .flip-box-inner {
+  transform:rotate3d(-1, -1, 0, 180deg);
+}
+.flip-box-back.diagonal {
+  transform:  rotateY(180deg) rotateZ(90deg);
+}
+
+/* HORIZONTAL INVERTED */
+.flip-box.horizontal.inverted:hover .flip-box-inner {
+  transform: rotateY(-180deg);
+}
+/* FLIP VERTICAL INVERTED */
+.flip-box.vertical.inverted:hover .flip-box-inner {
+  transform: rotateX(-180deg);
+}
+.flip-box-back.vertical.inverted {
+  transform: rotateX(-180deg);
+}
+/* FLIP DIAGONAL INVERTED */
+ .flip-box.diagonal.inverted:hover .flip-box-inner {
+   transform:rotate3d(1, 1, 0, 180deg); /*rotate3d(x, y, z, a) */
+}
+.flip-box-back.diagonal.inverted {
+  transform:  rotateY(180deg) rotateZ(90deg);
+} 
